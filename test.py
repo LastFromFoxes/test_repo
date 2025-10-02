@@ -19,7 +19,7 @@ fake = Faker()
 
 @pytest.fixture
 def user():
-    return User.objects.create_user(email=fake.unique.email(), password=fake.unique.password())
+    return User.objects.create_user(email=fake.unique.email())
 
 
 @pytest.fixture
@@ -46,15 +46,6 @@ def product_factory(db):
     def wrapper(title: str, description: str):
         product = ProductCard.objects.create(title=title, description=description)
         return product
-
-    return wrapper
-
-
-@pytest.fixture
-def add_card_to_seen_factory(db):
-    def wrapper(user_: User, card_: ProductCard):
-        history = CardBrowsingHistory.objects.create(user=user_, card=card_)
-        return history
 
     return wrapper
 
