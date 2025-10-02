@@ -14,8 +14,8 @@ fn main() {
     println!("Привет, {}!", name);
 
     // простая функция сложения
-    let a = 5;
-    let b = 7;
+    let a = 1;
+    let b = 4;
     println!("{} + {} = {}", a, b, add(a, b));
 }
 
