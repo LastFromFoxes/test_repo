@@ -10,7 +10,6 @@ from apps.cards.models import (
     Feature,
     ProductCard,
     PurchaseHistory,
-    Tariff,
 )
 from apps.users.models import User
 
@@ -71,13 +70,12 @@ def add_card_to_purchase_factory(db):
 
     return wrapper
 
-
 @pytest.fixture
 def create_feature_factory(db):
     def wrapper(title: str, tariff: Tariff):
         feature = Feature.objects.create(title=title, tariff=tariff)
         return feature
-
+    123
     return wrapper
 
 
